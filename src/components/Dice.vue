@@ -11,10 +11,10 @@
       </div>
     </div>
 
-    <button style="position: absolute; top: 0; right: 0;" @click="roll">
+    <button style="position: absolute; top: 0; right: 0" @click="roll">
       Roll
     </button>
-    <button style="position: absolute; top: 20px; right: 0;" @click="reset">
+    <button style="position: absolute; top: 20px; right: 0" @click="reset">
       Reset
     </button>
   </div>
@@ -36,7 +36,7 @@ export default {
       result: null,
       flips: null,
 
-      amountOfCalculations: null
+      amountOfCalculations: null,
     };
   },
 
@@ -53,39 +53,39 @@ export default {
     },
 
     calcScore(X, Y, Z) {
-      const rotateX = face => ({
+      const rotateX = (face) => ({
         top: face.back,
         left: face.left,
         front: face.top,
         bottom: face.front,
         right: face.right,
-        back: face.bottom
+        back: face.bottom,
       });
 
       for (let turn = 0; turn < X; turn++) {
         this.result = rotateX(this.result);
       }
 
-      const rotateY = face => ({
+      const rotateY = (face) => ({
         top: face.top,
         left: face.back,
         front: face.left,
         bottom: face.bottom,
         right: face.front,
-        back: face.right
+        back: face.right,
       });
 
       for (let turn = 0; turn < Y; turn++) {
         this.result = rotateY(this.result);
       }
 
-      const rotateZ = face => ({
+      const rotateZ = (face) => ({
         top: face.left,
         left: face.bottom,
         front: face.front,
         bottom: face.right,
         right: face.top,
-        back: face.back
+        back: face.back,
       });
 
       for (let turn = 0; turn < Z; turn++) {
@@ -99,7 +99,7 @@ export default {
       this.flips = {
         X: Math.floor(Math.random() * 5 + 1),
         Y: Math.floor(Math.random() * 4 + 1),
-        Z: Math.floor(Math.random() * 5 + 1)
+        Z: Math.floor(Math.random() * 5 + 1),
       };
 
       if (this.flips.X >= 3) {
@@ -150,7 +150,7 @@ export default {
           ease: CustomEase.create(
             "custom",
             "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,1.037 0.362,1.074 0.37,1.059 0.414,0.873 0.455,0.811 0.51,0.726 0.547,0.753 0.56,0.762 0.636,0.812 0.659,1.008 0.666,1.026 0.728,0.942 0.815,0.936 0.834,0.95 0.853,0.964 0.882,1.004 0.896,1.018 0.907,1.014 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1"
-          )
+          ),
         });
         this.tl.to(
           this.cube,
@@ -178,8 +178,8 @@ export default {
           `-=${1.4}`
         );
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

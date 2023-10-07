@@ -1,34 +1,29 @@
-# Dice
+# dice-v2
 
-To get the project up and running please make use of the versions below:
-```
-npm 6.7.0
-node 11.10.0
-yarn 1.17.3
-```
+This template should help get you started developing with Vue 3 in Vite.
 
-For switching between versions I recommend using a tool like [Node Version Manangement](https://github.com/tj/n)
+## Recommended IDE Setup
 
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Project setup
-```
-yarn install
-```
+## Customize configuration
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
+### Compile and Minify for Production
 
-## Configuration
-In `App.vue` you can change ` <Dice magic-number="1" />` to any number between 1 till 6. The animation will always be random and can be adjusted in `Dice.vue`. The face pointing upwards will be your configured number. 
+```sh
+npm run build
+```
