@@ -11,10 +11,20 @@
       </div>
     </div>
 
-    <button style="position: absolute; top: 0; right: 0" @click="roll">
-      Roll
+    <button
+      style="position: absolute; top: 0; right: 0"
+      @click="roll(magicNumber)"
+    >
+      Roll Fixed
     </button>
-    <button style="position: absolute; top: 20px; right: 0" @click="reset">
+    <button
+      style="position: absolute; top: 30px; right: 0"
+      @click="roll(Math.floor(Math.random() * 6) + 1)"
+    >
+      Roll Random
+    </button>
+
+    <button style="position: absolute; top: 60px; right: 0" @click="reset">
       Reset
     </button>
   </div>
@@ -123,7 +133,7 @@ export default {
       this.amountOfCalculations++;
     },
 
-    roll() {
+    roll(magicNumber) {
       this.reset();
       this.generateFlips();
       this.calcScore(this.flips.X, this.flips.Y, this.flips.Z);
@@ -132,10 +142,10 @@ export default {
       // console.log(`Y: ${this.flips.Y}`);
       // console.log(`Z: ${this.flips.Z}`);
 
-      if (parseFloat(this.result.top) !== parseFloat(this.magicNumber)) {
-        this.roll();
+      if (parseFloat(this.result.top) !== parseFloat(magicNumber)) {
+        this.roll(magicNumber);
       } else {
-        console.log(`System demands: ${parseFloat(this.magicNumber)}`);
+        console.log(`System demands: ${parseFloat(magicNumber)}`);
         console.log(`You've got: ${this.result.top} sorry system is boss`);
         console.log(
           `We did in total: ${parseFloat(
